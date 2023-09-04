@@ -5,7 +5,14 @@ const Header = () => {
 
   const { cart } = useContext(CartContext)
   return (
-    <header style={{ "height": "4rem", "backgroundColor": "green", "display": "flex", "justifyContent": "space-between", "padding": "1rem", "alignItems": "center" }}>
+    <header style={{
+      "height": "4rem",
+      "backgroundColor": "green",
+      "display": "flex",
+      "justifyContent": "space-between",
+      "padding": "1rem",
+      "alignItems": "center"
+    }}>
       <h1>Grönsaksbutiken</h1>
       <p>Kundvagn: {cart.length} </p>
     </header>
