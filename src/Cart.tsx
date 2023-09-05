@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { CartContext } from './CartContext'
 
 export default function Cart() {
-  const { cart } = useContext(CartContext)
+  const { cart, removeFromCart } = useContext(CartContext)
   let sum: number = 0
   return (
     <div style={{ "margin": "auto 3rem" }}>
@@ -11,9 +11,10 @@ export default function Cart() {
         cart.map(item => {
           sum += item.price
           return (
-            <li>
+            <div>
               {`${item.name}, ${item.price} kr`}
-            </li>
+              <button style={{ "marginLeft": "1rem" }} onClick={() => removeFromCart(item)} >X</button>
+            </div>
           )
         })}
       Totalt: {sum} kr
