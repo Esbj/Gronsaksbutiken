@@ -1,9 +1,12 @@
 import { useContext } from "react"
 import { CartContext } from "./CartContext"
-
-const Header = () => {
+type Props = {
+  toggleCart: () => void;
+}
+const Header = ({ toggleCart }: Props) => {
 
   const { cart } = useContext(CartContext)
+
   return (
     <header style={{
       "height": "4rem",
@@ -14,7 +17,7 @@ const Header = () => {
       "alignItems": "center"
     }}>
       <h1>Grönsaksbutiken</h1>
-      <p>Kundvagn: {cart.length} </p>
+      <p onClick={toggleCart}>Kundvagn: {cart.length} </p>
     </header>
   )
 }
