@@ -5,7 +5,8 @@ export default function Cart() {
   const { cart } = useContext(CartContext)
   let sum: number = 0
   return (
-    <>
+    <div style={{ "margin": "auto 3rem" }}>
+      <h3>Kundvagn</h3>
       {
         cart.map(item => {
           sum += item.price
@@ -16,6 +17,6 @@ export default function Cart() {
           )
         })}
       Totalt: {sum} kr
-    </>
+    </div>
   )
 }

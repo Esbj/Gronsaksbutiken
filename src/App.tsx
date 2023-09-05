@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Header from './Header'
 import MainContent from './MainContent'
-import Cart from './Cart'
 
 function App() {
   const [cartVisible, setCartVisible] = useState(false)
@@ -12,7 +11,6 @@ function App() {
     <>
       <Header toggleCart={toggleCart} />
       <MainContent />
-      {cartVisible && <Cart />}
     </>
   )
 }
