@@ -2,9 +2,13 @@ import { useContext } from "react"
 import { CartContext } from "./CartContext"
 import { Link } from "react-router-dom"
 
-const Header = () => {
+type Props = {
+  toggleCart: () => void;
+}
+const Header = ({ toggleCart }: Props) => {
 
   const { cart } = useContext(CartContext)
+
   return (
     <header style={{ "height": "6rem", "backgroundColor": "green", "display": "flex", "flexDirection": "column", "padding": "1rem", }}>
       <div style={{
@@ -14,7 +18,7 @@ const Header = () => {
         "alignItems": "center"
       }}>
         <Link to={"/"}><h1>Grönsaksbutiken</h1></Link>
-        <p>Kundvagn: {cart.length} </p>
+        <p onClick={toggleCart}>Kundvagn: {cart.length} </p>
       </div>
       <nav>
         <Link to={"/"}>Hem</Link>

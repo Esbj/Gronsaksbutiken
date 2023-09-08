@@ -1,9 +1,14 @@
-export interface Product {
+export class Product {
   id: string;
   name: string;
   price: number;
-}
 
+  constructor(name: string, price: number) {
+    this.id = Date.now().toString();
+    this.name = name;
+    this.price = price;
+  }
+}
 export const mockedProducts: Product[] = [
   {
     id: "1",
