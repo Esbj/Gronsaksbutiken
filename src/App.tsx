@@ -4,7 +4,6 @@ import Header from './Header'
 import MainContent from './MainContent'
 import About from './About'
 import NotFound from './NotFound'
-
 function App() {
   const [cartVisible, setCartVisible] = useState(false)
   const toggleCart = () => {
