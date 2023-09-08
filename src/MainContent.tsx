@@ -4,7 +4,7 @@ import { mockedProducts } from './data'
 import Cart from './Cart'
 
 const MainContent = () => {
-  const { addToCart } = useContext(CartContext)
+  const { addToCart, isCartVisible } = useContext(CartContext)
   return (
     <main style={{ "display": "flex", "justifyContent": "center", "gap": "5rem" }}>
       <div style={{ "display": "flex", "maxWidth": "40%", "gap": "2rem" }}>
@@ -16,7 +16,7 @@ const MainContent = () => {
           </div>
         ))}
       </div>
-      <Cart />
+      {isCartVisible && <Cart />}
     </main>
   )
 }

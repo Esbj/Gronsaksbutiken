@@ -2,13 +2,11 @@ import { useContext } from "react"
 import { CartContext } from "./CartContext"
 import { Link } from "react-router-dom"
 
-type Props = {
-  toggleCart: () => void;
-}
-const Header = ({ toggleCart }: Props) => {
+
+const Header = () => {
 
   const { cart } = useContext(CartContext)
-
+  const { toggleCart } = useContext(CartContext)
   return (
     <header style={{ "height": "6rem", "backgroundColor": "green", "display": "flex", "flexDirection": "column", "padding": "1rem", }}>
       <div style={{
